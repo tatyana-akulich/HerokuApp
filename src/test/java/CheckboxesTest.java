@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 public class CheckboxesTest extends BaseTest {
     private List<WebElement> elementsOfCheckbox;
@@ -15,6 +14,11 @@ public class CheckboxesTest extends BaseTest {
     public void getCheckboxElements() {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
         elementsOfCheckbox = driver.findElements(By.cssSelector("[type = checkbox]"));
+    }
+
+    @Test
+    public void checkAmountOfElementsInCheckbox(){
+        assertEquals(elementsOfCheckbox.size(), 2, "Amount of elements should be 2");
     }
 
     @Test

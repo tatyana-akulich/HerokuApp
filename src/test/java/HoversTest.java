@@ -24,7 +24,8 @@ public class HoversTest extends BaseTest {
         Actions actions = new Actions(driver);
         actions.moveToElement(users.get(0)).perform();
         assertEquals(captions.get(0).getText(), "name: user1\nView profile");
-        actions.moveToElement(driver.findElement(By.cssSelector("[href = '/users/1']"))).click().build().perform();
+        //actions.moveToElement(driver.findElement(By.cssSelector("[href = '/users/1']"))).click().build().perform();
+        actions.moveToElement(driver.findElement(By.linkText("View profile"))).click().build().perform();
         assertEquals(driver.findElement(By.xpath("//h1")).getText(), "Not Found");
     }
 
@@ -33,7 +34,7 @@ public class HoversTest extends BaseTest {
         Actions actions = new Actions(driver);
         actions.moveToElement(users.get(1)).perform();
         assertEquals(captions.get(1).getText(), "name: user2\nView profile");
-        actions.moveToElement(driver.findElement(By.cssSelector("[href = '/users/2']"))).click().build().perform();
+        actions.moveToElement(driver.findElement(By.linkText("View profile"))).click().build().perform();
         assertEquals(driver.findElement(By.xpath("//h1")).getText(), "Not Found");
     }
 
@@ -42,7 +43,7 @@ public class HoversTest extends BaseTest {
         Actions actions = new Actions(driver);
         actions.moveToElement(users.get(2)).perform();
         assertEquals(captions.get(2).getText(), "name: user3\nView profile");
-        actions.moveToElement(driver.findElement(By.cssSelector("[href = '/users/3']"))).click().build().perform();
+        actions.moveToElement(driver.findElement(By.linkText("View profile"))).click().build().perform();
         assertEquals(driver.findElement(By.xpath("//h1")).getText(), "Not Found");
     }
 }
