@@ -1,3 +1,6 @@
+package by.teachmeskills;
+
+import by.teachmeskills.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -12,8 +15,7 @@ public class FileUploadTest extends BaseTest {
 
     @Test
     public void testUpload() {
-        String absolutePath = (System.getProperty("user.dir") + "/src/test/resources/testForUpload.docx")
-                .replaceAll("\\\\", "/");
+        String absolutePath = (System.getProperty("user.dir") + "/src/test/resources/testForUpload.docx");
         driver.findElement(By.id("file-upload")).sendKeys(absolutePath);
         driver.findElement(By.id("file-submit")).click();
         assertThat(driver.findElement(By.id("uploaded-files")).getText())

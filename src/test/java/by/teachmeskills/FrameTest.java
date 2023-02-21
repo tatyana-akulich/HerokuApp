@@ -1,3 +1,5 @@
+package by.teachmeskills;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
