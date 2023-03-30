@@ -1,6 +1,5 @@
 package by.teachmeskills;
 
-import by.teachmeskills.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
